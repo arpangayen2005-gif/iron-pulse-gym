@@ -1,0 +1,828 @@
+
+/* =====================================
+   IRON PULSE - GYM WEBSITE
+   HTML5 + CSS3
+===================================== */
+
+/* 1. GLOBAL STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #e63935;
+    --primary-dark: #c92825;
+    --dark: #111111;
+    --dark-light: #1b1b1b;
+    --card: #202020;
+    --white: #ffffff;
+    --grey: #b7b7b7;
+    --border: #353535;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+.logo {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    line-height: 1.1;
+}
+
+h1 span,
+h2 span,
+.logo span {
+    color: var(--primary);
+}
+
+p {
+    color: var(--grey);
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+
+/* 2. HEADER AND NAVIGATION */
+
+.header {
+    min-height: 82px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: #101010;
+    border-bottom: 1px solid #292929;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 31px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    font-size: 12px;
+    font-weight: 600;
+    color: #d0d0d0;
+    transition: color 0.3s ease;
+}
+
+.header nav a:hover,
+.header nav a.active {
+    color: var(--primary);
+}
+
+
+/* 3. BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease,
+                transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: #555;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 17px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--primary);
+}
+
+
+/* 4. HOME PAGE HERO */
+
+.hero {
+    min-height: 650px;
+    padding: 90px 7%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0.96) 0%,
+            rgba(10, 10, 10, 0.78) 45%,
+            rgba(10, 10, 10, 0.15) 100%
+        ),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=85");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(52px, 7vw, 94px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-text {
+    max-width: 490px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero .text-link {
+    margin-left: 22px;
+}
+
+.hero-tag {
+    position: absolute;
+    bottom: 25px;
+    right: 7%;
+    padding: 10px 17px;
+    background: var(--primary);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+/* 5. HOME PAGE STATISTICS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 35px 7%;
+    gap: 25px;
+    background: #191919;
+    border-bottom: 1px solid #2b2b2b;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats h2 {
+    font-size: 34px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.stats p {
+    font-size: 12px;
+}
+
+
+/* 6. GENERAL SECTIONS */
+
+.section {
+    padding: 90px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    margin-bottom: 16px;
+}
+
+.section-heading > p:last-child {
+    font-size: 14px;
+}
+
+.dark-section {
+    background: #181818;
+}
+
+
+/* 7. CARDS AND GRID */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-card,
+.trainer-card,
+.info-card,
+.price-card {
+    background: var(--card);
+    border: 1px solid #303030;
+    overflow: hidden;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.service-card:hover,
+.trainer-card:hover,
+.info-card:hover,
+.price-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+}
+
+.service-card img,
+.trainer-card img {
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover img,
+.trainer-card:hover img {
+    transform: scale(1.04);
+}
+
+.service-card > img,
+.trainer-card > img {
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3,
+.info-card h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.card-content p:not(.eyebrow),
+.info-card p {
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* 8. HOME CALL TO ACTION */
+
+.cta {
+    padding: 90px 7%;
+    text-align: center;
+    background:
+        linear-gradient(rgba(15, 15, 15, 0.92),
+                        rgba(15, 15, 15, 0.94)),
+        url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1600&q=80");
+    background-position: center;
+    background-size: cover;
+}
+
+.cta h2 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin-bottom: 20px;
+}
+
+.cta > p:not(.eyebrow) {
+    margin-bottom: 27px;
+    font-size: 14px;
+}
+
+
+/* 9. INNER PAGE BANNERS */
+
+.page-banner {
+    min-height: 330px;
+    padding: 75px 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid #292929;
+}
+
+.page-banner h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    margin-bottom: 17px;
+}
+
+.page-banner > p:last-child {
+    max-width: 560px;
+    font-size: 14px;
+}
+
+.about-banner {
+    background-image:
+        linear-gradient(90deg, #111111 5%, rgba(17,17,17,.55)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80");
+}
+
+.programs-banner {
+    background-image:
+        linear-gradient(90deg, #111111 5%, rgba(17,17,17,.55)),
+        url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1600&q=80");
+}
+
+.trainers-banner {
+    background-image:
+        linear-gradient(90deg, #111111 5%, rgba(17,17,17,.55)),
+        url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1600&q=80");
+}
+
+.membership-banner {
+    background-image:
+        linear-gradient(90deg, #111111 5%, rgba(17,17,17,.55)),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80");
+}
+
+.contact-banner {
+    background-image:
+        linear-gradient(90deg, #111111 5%, rgba(17,17,17,.55)),
+        url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1600&q=80");
+}
+
+
+/* 10. ABOUT PAGE */
+
+.about-section {
+    padding: 90px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-image img {
+    height: 460px;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    font-size: clamp(36px, 4.5vw, 56px);
+    margin-bottom: 25px;
+}
+
+.about-content > p:not(.eyebrow) {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.about-content .btn {
+    margin-top: 12px;
+}
+
+.info-card {
+    padding: 30px;
+    border-top: 3px solid var(--primary);
+}
+
+.info-card h3 {
+    color: var(--white);
+}
+
+
+/* 11. TRAINERS PAGE */
+
+.trainer-role {
+    color: var(--primary) !important;
+    font-size: 11px !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+
+/* 12. MEMBERSHIP PAGE */
+
+.pricing-grid {
+    align-items: stretch;
+}
+
+.price-card {
+    padding: 32px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.price-card > p:not(.eyebrow) {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.price-card .price {
+    color: var(--white);
+    font-size: 35px !important;
+    font-weight: 800;
+    margin-bottom: 12px !important;
+}
+
+.price-card .price span {
+    color: var(--grey);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 10px 0 28px;
+    flex-grow: 1;
+}
+
+.price-card li {
+    color: #d0d0d0;
+    padding: 10px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #383838;
+}
+
+.price-card li::before {
+    content: "✓";
+    color: var(--primary);
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.price-card .btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+.price-card.featured {
+    border: 1px solid var(--primary);
+    position: relative;
+}
+
+.price-card.featured .price {
+    color: var(--primary);
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+
+/* 13. CONTACT PAGE */
+
+.contact-section {
+    padding: 90px 7%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    font-size: clamp(34px, 4vw, 48px);
+    margin-bottom: 20px;
+}
+
+.contact-info > p:not(.eyebrow) {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #333333;
+}
+
+.contact-item h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.contact-item p {
+    font-size: 13px;
+}
+
+.contact-form {
+    padding: 35px;
+    background: var(--card);
+    border: 1px solid #333333;
+}
+
+.contact-form label {
+    display: block;
+    color: #eeeeee;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 17px 0 8px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px 14px;
+    color: var(--white);
+    background: #151515;
+    border: 1px solid #414141;
+    outline: none;
+    border-radius: 0;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-note {
+    margin-top: 15px;
+    font-size: 11px;
+}
+
+
+/* 14. FOOTER */
+
+.footer {
+    padding: 40px 7%;
+    text-align: center;
+    background: #0b0b0b;
+    border-top: 1px solid #292929;
+}
+
+.footer .logo {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.footer > p {
+    font-size: 12px;
+}
+
+.footer .copyright {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #292929;
+    font-size: 11px;
+}
+
+
+/* 15. RESPONSIVE DESIGN: TABLETS */
+
+@media (max-width: 1000px) {
+    .header {
+        flex-direction: column;
+        padding: 22px 5%;
+    }
+
+    .header nav {
+        gap: 15px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-section,
+    .contact-section {
+        gap: 35px;
+    }
+
+    .service-card img,
+    .trainer-card img {
+        height: 220px;
+    }
+}
+
+
+/* 16. RESPONSIVE DESIGN: MOBILE */
+
+@media (max-width: 650px) {
+    .header {
+        padding: 20px 5%;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .header nav {
+        gap: 10px 15px;
+    }
+
+    .header nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 580px;
+        padding: 65px 6%;
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: 53px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+    }
+
+    .hero .text-link {
+        margin-left: 0;
+        display: block;
+    }
+
+    .hero-tag {
+        right: 6%;
+        bottom: 15px;
+        font-size: 9px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 5%;
+        gap: 25px 12px;
+    }
+
+    .stats h2 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 65px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .service-card img,
+    .trainer-card img {
+        height: 250px;
+    }
+
+    .cta {
+        padding: 65px 5%;
+    }
+
+    .page-banner {
+        min-height: 290px;
+        padding: 55px 5%;
+    }
+
+    .page-banner h1 {
+        font-size: 45px;
+    }
+
+    .about-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+        padding: 65px 5%;
+        gap: 32px;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .about-content h2 {
+        font-size: 42px;
+    }
+
+    .price-card {
+        padding: 28px 22px;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .footer {
+        padding: 35px 5%;
+    }
+}
+
+
+/* 17. SMALL MOBILE SCREENS */
+
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .header nav {
+        gap: 8px 11px;
+    }
+
+    .header nav a {
+        font-size: 10px;
+    }
+
+    .btn {
+        padding: 12px 17px;
+        font-size: 11px;
+    }
+}
